@@ -11,14 +11,12 @@ def check_capacity(max_capacity: int, guests: list) -> bool:
 
     # Сортируем события сначала по дате, затем по типу события (выезд перед заездом)
     events.sort(key=lambda x: (x[0], x[1]))
-    print(events)
 
     current_guests = 0
 
     # Обрабатываем события
     for event in events:
         current_guests += event[1]  # Увеличиваем или уменьшаем количество гостей
-        print(current_guests)
         if current_guests > max_capacity:  # Проверяем превышение вместимости
             return False
 
